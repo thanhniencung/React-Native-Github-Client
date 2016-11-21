@@ -8,6 +8,11 @@ Features :
  - Show Profile
  - Show repositories, followers, following, stars
 
+# Build
+- cd to project folder
+- run command: npm install
+- run command: react-native run-ios
+
 # Demo
 
 ![Example Image](https://raw.github.com/thanhniencung/React-Native-Github-Client/master/screenshots/demo.gif)
