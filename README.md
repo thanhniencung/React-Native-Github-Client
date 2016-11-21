@@ -1,7 +1,7 @@
 
 # Introduction
 Hi React Native and nice to meet you ! 
-This is my first react native application and I want to understand how react native work with native code (build layout, network, performance, use libraries ...)
+This is my first react native application and with this build I want to understand how react native work with the native code (build layout, network, performance, use libraries ...)
 
 Features : 
  - Login github with Authorization Basic
