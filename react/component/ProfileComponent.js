@@ -17,10 +17,13 @@ class ProfileComponent extends Component {
   }
 
   showRepositories() {
-    /*this.props.navigator.push({
+    this.props.navigator.push({
                 title: "Repositories",
                 component: repositoriesComponent,
-              });*/
+                passProps: {
+                  repositoryUrl: this.props.profile.repos_url
+                }
+              });
   }
     
 	render() {

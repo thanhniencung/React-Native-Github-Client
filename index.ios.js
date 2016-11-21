@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-var LoginComponent = require('./js/component/LoginComponent');
+var LoginComponent = require('./react/component/LoginComponent');
 import React, { Component } from 'react';
 import {
   AppRegistry,
