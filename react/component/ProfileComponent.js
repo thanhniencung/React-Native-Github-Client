@@ -10,6 +10,7 @@ import {
 
 const styles = require('../style/profileStyle');
 var repositoriesComponent = require('./RepositoriesComponent');
+var followersComponent = require('./FollowersComponent');
 
 class ProfileComponent extends Component {
 	constructor(props) {
@@ -25,6 +26,36 @@ class ProfileComponent extends Component {
                 }
               });
   }
+
+  showFollowers() {
+    this.props.navigator.push({
+                title: "Followers",
+                component: followersComponent,
+                passProps: {
+                  url: this.props.profile.followers_url
+                }
+              });
+  }
+
+  showStars() {
+    this.props.navigator.push({
+                title: "Stars",
+                component: repositoriesComponent,
+                passProps: {
+                  repositoryUrl: "https://api.github.com/users/" + this.props.profile.login + "/starred"
+                }
+              });
+  }
+
+  showFollowing() {
+    this.props.navigator.push({
+                title: "Following",
+                component: followersComponent,
+                passProps: {
+                  url: "https://api.github.com/users/" + this.props.profile.login + "/following"
+                }
+              });
+  }  
     
 	render() {
       return (
@@ -58,19 +89,25 @@ class ProfileComponent extends Component {
 
               <View style={styles.stars}>
                   <View style={styles.horizContainer}>
-                     <Text style={styles.cateText}> Stars </Text>
+                     <Text
+                        onPress={this.showStars.bind(this)} 
+                        style={styles.cateText}> Stars </Text>
                   </View>
               </View>
 
               <View style={styles.fllowers}>
                   <View style={styles.horizContainer}>
-                     <Text style={styles.cateText}> Fllowers </Text>
+                     <Text 
+                        onPress={this.showFollowers.bind(this)}
+                        style={styles.cateText}> Followers </Text>
                   </View>
               </View>
 
               <View style={styles.following}>
                   <View style={styles.horizContainer}>
-                     <Text style={styles.cateText}> Fllowing </Text>
+                     <Text 
+                        onPress={this.showFollowing.bind(this)}
+                        style={styles.cateText}> Following </Text>
                   </View>
               </View>
           </View>
